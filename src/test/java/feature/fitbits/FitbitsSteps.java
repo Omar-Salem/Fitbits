@@ -4,11 +4,12 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import junit.framework.Assert;
 import org.omarsalem.fitbits.SoccerPitch;
 import org.omarsalem.fitbits.Trainee;
 
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class FitbitsSteps {
 
@@ -39,6 +40,6 @@ public class FitbitsSteps {
 
     @Then("^output is \"([^\"]*)\"$")
     public void outputIs(String expected) throws Throwable {
-        Assert.assertEquals(expected, finalPosition);
+        assertEquals(expected, finalPosition);
     }
 }

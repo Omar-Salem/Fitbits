@@ -29,4 +29,13 @@ public class SoccerPitch {
     public String getFinalPosition(int index) {
         return trainees.get(index).toString();
     }
+
+    @Override
+    public String toString() {
+        return "SoccerPitch{" +
+                "length=" + length +
+                ", width=" + width +
+                ", trainees=" + trainees +
+                '}';
+    }
 }

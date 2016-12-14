@@ -90,4 +90,27 @@ public class Trainee {
     public String toString() {
         return String.format("%s %s %s", x, y, heading);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Trainee trainee = (Trainee) o;
+
+        if (x != trainee.x) return false;
+        if (y != trainee.y) return false;
+        if (bearing != trainee.bearing) return false;
+        return heading != null ? heading.equals(trainee.heading) : trainee.heading == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        result = 31 * result + (heading != null ? heading.hashCode() : 0);
+        result = 31 * result + bearing;
+        return result;
+    }
 }
