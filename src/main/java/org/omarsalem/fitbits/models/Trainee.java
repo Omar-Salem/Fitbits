@@ -1,5 +1,7 @@
 package org.omarsalem.fitbits.models;
 
+import java.awt.*;
+
 import static org.omarsalem.fitbits.Util.*;
 
 public class Trainee {
@@ -28,20 +30,36 @@ public class Trainee {
         }
     }
 
-    public void command(String instruction) {
-        switch (instruction) {
-            case "L":
-                this.bearing -= NINETY_DEGREES;
-                adjustHeading();
-                break;
-            case "R":
-                this.bearing += NINETY_DEGREES;
-                adjustHeading();
-                break;
-            case "M":
-                move();
-                break;
+    public void turnLeft() {
+        this.bearing -= NINETY_DEGREES;
+        adjustHeading();
+    }
+
+    public void turnRight() {
+        this.bearing += NINETY_DEGREES;
+        adjustHeading();
+    }
+
+    public Point getNewPosition() {
+        switch (bearing) {
+            //North
+            case ZERO_DEGREES:
+                return new Point(x, y + 1);
+            //East
+            case NINETY_DEGREES:
+                return new Point(x + 1, y);
+            //South
+            case ONE_HUNDRED_EIGHT_DEGREES:
+                return new Point(x, y - 1);
+            //West
+            default:
+                return new Point(x - 1, y);
         }
+    }
+
+    public void move(Point newPosition) {
+        this.x = newPosition.x;
+        this.y = newPosition.y;
     }
 
     private void adjustHeading() {
@@ -61,27 +79,6 @@ public class Trainee {
                 break;
             case TWO_HUNDRED_SEVENTY_DEGREES:
                 heading = "W";
-                break;
-        }
-    }
-
-    private void move() {
-        switch (bearing) {
-            //North
-            case ZERO_DEGREES:
-                y++;
-                break;
-            //East
-            case NINETY_DEGREES:
-                x++;
-                break;
-            //South
-            case ONE_HUNDRED_EIGHT_DEGREES:
-                y--;
-                break;
-            //West
-            default:
-                x--;
                 break;
         }
     }

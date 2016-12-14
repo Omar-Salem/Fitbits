@@ -1,6 +1,15 @@
 Feature: Fitbits
 
-  Scenario:Basic case 1
+  Scenario:Trainee pushed outside boundary
+    Given boundaries are 2,2
+    And trainee position is 1,1,"N"
+    And coach instructs trainee
+      | M |
+      | M |
+    When trainee 1 is finished
+    Then output is "1 2 N"
+
+  Scenario:Basic case
     Given boundaries are 5,5
     And trainee position is 1,2,"N"
     And coach instructs trainee
