@@ -1,10 +1,9 @@
-package org.omarsalem.fitbits;
+package org.omarsalem.fitbits.services;
 
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.omarsalem.fitbits.services.FileDataGetter;
 import org.omarsalem.fitbits.viewmodels.InputViewModel;
 
 import java.io.File;
@@ -24,7 +23,9 @@ public class FileDataGetterTest {
         assertEquals(15, target.getWidth());
         assertEquals(2, target.getData().size());
         final InputViewModel trainee1 = target.getData().get(0);
-        assertEquals("1 2 N", trainee1.getTrainee().toString());
+        assertEquals(1, trainee1.getTrainee().getX());
+        assertEquals(2, trainee1.getTrainee().getY());
+        assertEquals("N", trainee1.getTrainee().getHeading());
         assertArrayEquals(new String[]{"L", "M", "L", "M", "L", "M", "L", "M", "M"}, trainee1.getInstructions());
     }
 

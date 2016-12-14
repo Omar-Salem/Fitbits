@@ -1,4 +1,4 @@
-Feature: Fitbits
+Feature: Soccer Pitch
 
   Scenario:Trainee pushed outside boundary
     Given boundaries are 2,2

@@ -20,12 +20,4 @@ public class InputViewModel {
     public String[] getInstructions() {
         return instructions;
     }
-
-    @Override
-    public String toString() {
-        return "InputViewModel{" +
-                "trainee=" + trainee +
-                ", instructions=" + Arrays.toString(instructions) +
-                '}';
-    }
 }

@@ -1,4 +1,4 @@
-package feature.fitbits;
+package feature.pitch;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class FitbitsSteps {
+public class PitchSteps {
 
     private SoccerPitch target;
     private String finalPosition;

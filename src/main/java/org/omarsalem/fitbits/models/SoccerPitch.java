@@ -45,7 +45,8 @@ public class SoccerPitch {
     }
 
     public String getTraineeFinalPosition(int index) {
-        return trainees.get(index).toString();
+        final Trainee trainee = trainees.get(index);
+        return String.format("%s %s %s", trainee.getX(), trainee.getY(), trainee.getHeading());
     }
 
     @Override
