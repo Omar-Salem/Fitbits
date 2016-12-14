@@ -10,13 +10,11 @@ import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
-        File file;
         if (args.length == 0) {
-            ClassLoader classLoader = Program.class.getClassLoader();
-            file = new File(classLoader.getResource("data.txt").getFile());
-        } else {
-            file = new File(args[0]);
+            throw new RuntimeException("please supply input file");
         }
+
+        File file = new File(args[0]);
 
         DataGetter dataGetter = new FileDataGetter(file);
         SoccerPitch soccerPitch = new SoccerPitch(dataGetter.getLength(), dataGetter.getWidth());
