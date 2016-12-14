@@ -1,5 +1,10 @@
 package org.omarsalem.fitbits;
 
+import org.omarsalem.fitbits.models.SoccerPitch;
+import org.omarsalem.fitbits.services.DataGetter;
+import org.omarsalem.fitbits.services.FileDataGetter;
+import org.omarsalem.fitbits.viewmodels.InputViewModel;
+
 import java.io.File;
 import java.util.List;
 

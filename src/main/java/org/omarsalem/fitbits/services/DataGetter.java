@@ -1,10 +1,9 @@
-package org.omarsalem.fitbits;
+package org.omarsalem.fitbits.services;
+
+import org.omarsalem.fitbits.viewmodels.InputViewModel;
 
 import java.util.List;
 
-/**
- * Created by Omar on 14/12/2016.
- */
 public interface DataGetter {
     int getLength();
 

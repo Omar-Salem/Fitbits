@@ -3,6 +3,8 @@ package org.omarsalem.fitbits;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.omarsalem.fitbits.services.FileDataGetter;
+import org.omarsalem.fitbits.viewmodels.InputViewModel;
 
 import java.io.File;
 

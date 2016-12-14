@@ -1,5 +1,8 @@
-package org.omarsalem.fitbits;
+package org.omarsalem.fitbits.services;
 
+
+import org.omarsalem.fitbits.viewmodels.InputViewModel;
+import org.omarsalem.fitbits.models.Trainee;
 
 import java.io.File;
 import java.io.FileNotFoundException;

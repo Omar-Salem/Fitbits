@@ -1,4 +1,4 @@
-package org.omarsalem.fitbits;
+package org.omarsalem.fitbits.models;
 
 import java.util.ArrayList;
 import java.util.List;
