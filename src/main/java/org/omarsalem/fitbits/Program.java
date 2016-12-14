@@ -22,14 +22,14 @@ public class Program {
 
         for (int i = 0; i < traineesData.size(); i++) {
             final InputViewModel model = traineesData.get(i);
-            soccerPitch.add(model.getTrainee());
+            soccerPitch.addTrainee(model.getTrainee());
             for (String instruction : model.getInstructions()) {
-                soccerPitch.instruct(i, instruction);
+                soccerPitch.instructTrainee(i, instruction);
             }
         }
 
         for (int i = 0; i < soccerPitch.getTraineesCount(); i++) {
-            final String finalPosition = soccerPitch.getFinalPosition(i);
+            final String finalPosition = soccerPitch.getTraineeFinalPosition(i);
             System.out.println(finalPosition);
         }
     }

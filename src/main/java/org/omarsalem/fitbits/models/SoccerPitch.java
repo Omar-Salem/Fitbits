@@ -15,15 +15,18 @@ public class SoccerPitch {
         this.width = width;
     }
 
-    public void add(Trainee trainee) {
-        trainees.add(trainee);
+    public void addTrainee(Trainee trainee) {
+        final Point position = new Point(trainee.getX(), trainee.getY());
+        if (checkIsValidPosition(position)) {
+            trainees.add(trainee);
+        }
     }
 
     public int getTraineesCount() {
         return trainees.size();
     }
 
-    public void instruct(int index, String instruction) {
+    public void instructTrainee(int index, String instruction) {
         final Trainee trainee = trainees.get(index);
         switch (instruction) {
             case "L":
@@ -41,7 +44,7 @@ public class SoccerPitch {
         }
     }
 
-    public String getFinalPosition(int index) {
+    public String getTraineeFinalPosition(int index) {
         return trainees.get(index).toString();
     }
 

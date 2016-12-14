@@ -24,22 +24,27 @@ public class FitbitsSteps {
     @And("^trainee position is (\\d+),(\\d+),\"([^\"]*)\"$")
     public void traineePositionIs(int x, int y, String heading) throws Throwable {
         Trainee trainee = new Trainee(x, y, heading);
-        target.add(trainee);
+        target.addTrainee(trainee);
     }
 
     @And("^coach instructs trainee$")
     public void coachInstructsTrainee(List<String> instructions) throws Throwable {
         final int count = target.getTraineesCount();
-        instructions.forEach(instruction -> target.instruct(count - 1, instruction));
+        instructions.forEach(instruction -> target.instructTrainee(count - 1, instruction));
     }
 
     @When("^trainee (\\d+) is finished$")
     public void traineeIsFinished(int id) throws Throwable {
-        finalPosition = target.getFinalPosition(id - 1);
+        finalPosition = target.getTraineeFinalPosition(id - 1);
     }
 
     @Then("^output is \"([^\"]*)\"$")
     public void outputIs(String expected) throws Throwable {
         assertEquals(expected, finalPosition);
+    }
+
+    @Then("^pitch has (\\d+) trainees$")
+    public void pitchHasTrainees(int count) throws Throwable {
+        assertEquals(count, target.getTraineesCount());
     }
 }

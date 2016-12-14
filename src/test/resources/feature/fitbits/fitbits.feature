@@ -9,6 +9,11 @@ Feature: Fitbits
     When trainee 1 is finished
     Then output is "1 2 N"
 
+  Scenario:Trainee placed outside boundary
+    Given boundaries are 2,2
+    And trainee position is 3,3,"N"
+    Then pitch has 0 trainees
+
   Scenario:Basic case
     Given boundaries are 5,5
     And trainee position is 1,2,"N"

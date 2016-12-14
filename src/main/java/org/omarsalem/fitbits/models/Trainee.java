@@ -30,6 +30,14 @@ public class Trainee {
         }
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public void turnLeft() {
         this.bearing -= NINETY_DEGREES;
         adjustHeading();
